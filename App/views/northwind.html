@@ -1,0 +1,28 @@
+<h2>northwind Orders</h2>
+
+<section id="TableOrders">
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer ID</th>
+                    <th>Ship Name</th>
+                    <th>Ship City</th>
+                    <th>Ship Country</th>
+                </tr>
+            </thead>
+            <!-- ko if: isAttachedToView() -->
+            <tbody data-bind="foreach: orders">
+                <tr>
+                    <td data-bind="text: OrderID"></td>
+                    <td data-bind="text: CustomerID"></td>
+                    <td data-bind="text: ShipName"></td>
+                    <td data-bind="text: ShipCity"></td>
+                    <td data-bind="text: ShipCountry"></td>
+                </tr>
+            </tbody>
+            <!-- /ko -->
+        </table>
+    </div>
+</section>
