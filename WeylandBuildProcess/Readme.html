@@ -1,0 +1,38 @@
+** Weyland (Install and build) -MANUAL
+1. Install Node.js from : http://nodejs.org/
+2. From the command line (win run: type cmd)  go to :(c:\Program Files\nodejs\) 
+3. execute: npm install -g weyland
+4. Weyland files will be downloaded @ c:\Users\roshit\AppData\Roaming\npm\node_modules\weyland\
+5. Then go to cmd (run as administrator) => "c:\Roshit\ASP.NET Projects\VS2012 Express Projects\DurandalSPAMVC4\DurandalSPAMVC4\"
+6. Execute weyland build 
+   note: weyland build only works if u open cmd command line tool as "administrator"
+7. "main-built.js" file will be created under: Root\App folder
+
+** Weyland (Install and build) -Automated
+
+1. Go to project properties & add below in the post-build event command line
+	if $(ConfigurationName) == Release (
+	  cd $(ProjectDir)
+	  attrib -R App\main-built.js
+	  weyland build
+	)
+
+
+*****Installing Gulp:
+
+1. Install Node.js from : http://nodejs.org/
+2. From the command line (win run: type cmd)  go to :(c:\Program Files\nodejs\) 
+3. execute: npm install gulp
+4. Gulp Installed @ c:\Program Files\nodejs\node_modules\gulp\
+5. Open project properties & add below in the post-build event command line
+	if '$(Configuration)'=='Release' (
+		cd $(ProjectDir)
+		gulp build
+	)
+
+
+*****Getting Optimizer.exe:
+1.go to http://durandaljs.com/downloads.html
+2.Download Durandal.zip from "Durandal 1.2.0"
+3.In Zip, go to : App\durandal\amd\
+
